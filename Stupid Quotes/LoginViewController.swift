@@ -9,10 +9,16 @@
 import Foundation
 import UIKit
 
+protocol ToSignUpDelegate {
+    func passUserInfo(username: String, password: String)
+}
+
 class LoginViewController: UIViewController {
     @IBOutlet weak var usernameTextField: UITextField!
     @IBOutlet weak var passwordTextField: UITextField!
     @IBOutlet var inputBackgroundView: UIView!
+    
+    var delegate: ToSignUpDelegate? = nil
     
     override func viewDidLoad() {
         self.inputBackgroundView.layer.cornerRadius = Style.borderRadius

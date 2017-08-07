@@ -13,10 +13,12 @@ import Firebase
 class User: NSObject {
     let uid: String
     let username: String
+    let email: String
     
-    init(uid: String, username: String) {
+    init(uid: String, username: String, email: String) {
         self.uid = uid
         self.username = username
+        self.email = email
     }
     
     private static var _current: User?
@@ -40,11 +42,13 @@ class User: NSObject {
     
     required init?(coder aDecoder: NSCoder) {
         guard let uid = aDecoder.decodeObject(forKey: Constants.userDefaults.uid) as? String,
-            let username = aDecoder.decodeObject(forKey: Constants.userDefaults.username) as? String
+            let username = aDecoder.decodeObject(forKey: Constants.userDefaults.username) as? String,
+            let email = aDecoder.decodeObject(forKey: Constants.userDefaults.email) as? String
             else { return nil }
         
         self.uid = uid
         self.username = username
+        self.email = email
         
         super.init()
     }
@@ -52,11 +56,13 @@ class User: NSObject {
     init?(snapshot: DataSnapshot) {
         guard let dict = snapshot.value as? [String:Any],
             let username = dict["username"] as? String,
-            let uid = dict["uid"] as? String
+            let uid = dict["uid"] as? String,
+            let email = dict["email"] as? String
         else { return nil }
         
         self.username = username
         self.uid = uid
+        self.email = email
         
         super.init()
     }
@@ -66,5 +72,6 @@ extension User: NSCoding {
     func encode(with aCoder: NSCoder) {
         aCoder.encode(uid, forKey: Constants.userDefaults.uid)
         aCoder.encode(username, forKey: Constants.userDefaults.username)
+        aCoder.encode(email, forKey: Constants.userDefaults.email)
     }
 }

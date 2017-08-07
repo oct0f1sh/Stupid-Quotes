@@ -13,11 +13,7 @@ class CreateQuote: UIViewController {
     @IBOutlet weak var publishButton: UIButton!
     @IBOutlet weak var quoteTextField: UITextField!
     
-    var user = User(uid: "0", username: "userZero")
-    
     @IBAction func publishButtonTapped(_ sender: Any) {
-        
-        QuoteService.createQuote(quote: self.quoteTextField.text!, user: user, groupID: "0")
         
     }
 }

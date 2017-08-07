@@ -13,8 +13,9 @@ typealias FIRUser = FirebaseAuth.User
 
 class LoginService {
     static func handleUser(username: String, password: String, completion: @escaping (User?, String?) -> Void) {
-        doesUserExist(username: username) { (doesExist) in
-            if doesExist {
+        doesUserExist(username: username) { (user) in
+            if let user = user {
+                Auth.auth().signIn(withEmail: user.email, password: password)
                 return completion(nil, "Username already exists")
             } else {
                 let email = username + "@gmail.com"
@@ -31,7 +32,8 @@ class LoginService {
         let uid = ref.childByAutoId().key
         
         let userDict: [String:Any] = ["username" : username,
-                                      "uid" : uid]
+                                      "uid" : uid,
+                                      "email" : email]
         
         Auth.auth().createUser(withEmail: email, password: password, completion: { (user: FIRUser?, error) in
             if error == nil {
@@ -42,18 +44,18 @@ class LoginService {
             }
         })
         
-        let user = User(uid: uid, username: username)
+        let user = User(uid: uid, username: username, email: email)
         completion(user)
     }
     
-    static func doesUserExist(username: String, completion: @escaping (Bool) -> Void) {
+    static func doesUserExist(username: String, completion: @escaping (User?) -> Void) {
         let dispatchGroup = DispatchGroup()
         
         let ref = DatabaseReference.toLocation(.users)
         
         ref.observeSingleEvent(of: .value, with: { (snapshot) in
             guard let snapshot = snapshot.children.allObjects as? [DataSnapshot]
-                else { return completion(false) }
+                else { return completion(nil) }
             
             for userSnap in snapshot {
                 dispatchGroup.enter()
@@ -62,18 +64,18 @@ class LoginService {
                 
                 if user?.username == username {
                     dispatchGroup.leave()
-                    return completion(true)
+                    return completion(user)
                 } else {
                     dispatchGroup.leave()
                 }
             }
             
             if snapshot.count == 0 {
-                return completion(false)
+                return completion(nil)
             }
             
             dispatchGroup.notify(queue: .main, execute: {
-                return completion(false)
+                return completion(nil)
             })
         })
     }
