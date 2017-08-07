@@ -1,0 +1,6 @@
+framework module Pods_Stupid_Quotes {
+  umbrella header "Pods-Stupid Quotes-umbrella.h"
+
+  export *
+  module * { export * }
+}
