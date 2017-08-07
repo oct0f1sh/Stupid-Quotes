@@ -10,6 +10,8 @@
 		6E2C913C2824A540562EED1E /* Pods_Stupid_Quotes.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 282DC09F618D4EBE033D2005 /* Pods_Stupid_Quotes.framework */; };
 		AE3532A21F38DC1C00CDA701 /* QuoteService.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE3532A11F38DC1C00CDA701 /* QuoteService.swift */; };
 		AE3532A51F38DC3F00CDA701 /* DatabaseReference+Location.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE3532A41F38DC3F00CDA701 /* DatabaseReference+Location.swift */; };
+		AE3532A81F38DE8A00CDA701 /* Group.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE3532A71F38DE8A00CDA701 /* Group.swift */; };
+		AE3532AA1F38E97400CDA701 /* QuoteCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE3532A91F38E97400CDA701 /* QuoteCell.swift */; };
 		AEE697F71F38CF8F00B43FC0 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEE697F61F38CF8F00B43FC0 /* AppDelegate.swift */; };
 		AEE697F91F38CF8F00B43FC0 /* CreateQuote.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEE697F81F38CF8F00B43FC0 /* CreateQuote.swift */; };
 		AEE697FC1F38CF8F00B43FC0 /* CreateQuote.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AEE697FA1F38CF8F00B43FC0 /* CreateQuote.storyboard */; };
@@ -25,6 +27,8 @@
 		2CC090E9AAA4EC2A894670C7 /* Pods-Stupid Quotes.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Stupid Quotes.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Stupid Quotes/Pods-Stupid Quotes.debug.xcconfig"; sourceTree = "<group>"; };
 		AE3532A11F38DC1C00CDA701 /* QuoteService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QuoteService.swift; sourceTree = "<group>"; };
 		AE3532A41F38DC3F00CDA701 /* DatabaseReference+Location.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "DatabaseReference+Location.swift"; sourceTree = "<group>"; };
+		AE3532A71F38DE8A00CDA701 /* Group.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Group.swift; sourceTree = "<group>"; };
+		AE3532A91F38E97400CDA701 /* QuoteCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QuoteCell.swift; sourceTree = "<group>"; };
 		AEE697F31F38CF8F00B43FC0 /* Stupid Quotes.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Stupid Quotes.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		AEE697F61F38CF8F00B43FC0 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		AEE697F81F38CF8F00B43FC0 /* CreateQuote.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateQuote.swift; sourceTree = "<group>"; };
@@ -121,6 +125,7 @@
 			children = (
 				AEE698131F38D46F00B43FC0 /* User.swift */,
 				AEE698151F38D47900B43FC0 /* Quote.swift */,
+				AE3532A71F38DE8A00CDA701 /* Group.swift */,
 			);
 			name = Models;
 			sourceTree = "<group>";
@@ -128,6 +133,7 @@
 		AEE6980B1F38D1A900B43FC0 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				AE3532A91F38E97400CDA701 /* QuoteCell.swift */,
 			);
 			name = Views;
 			sourceTree = "<group>";
@@ -292,8 +298,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AE3532AA1F38E97400CDA701 /* QuoteCell.swift in Sources */,
 				AE3532A51F38DC3F00CDA701 /* DatabaseReference+Location.swift in Sources */,
 				AEE698161F38D47900B43FC0 /* Quote.swift in Sources */,
+				AE3532A81F38DE8A00CDA701 /* Group.swift in Sources */,
 				AEE697F91F38CF8F00B43FC0 /* CreateQuote.swift in Sources */,
 				AE3532A21F38DC1C00CDA701 /* QuoteService.swift in Sources */,
 				AEE697F71F38CF8F00B43FC0 /* AppDelegate.swift in Sources */,
