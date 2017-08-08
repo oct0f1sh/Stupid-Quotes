@@ -15,13 +15,14 @@ class LoginService {
     static func handleUser(username: String, password: String, completion: @escaping (User?, String?) -> Void) {
         doesUserExist(username: username) { (user) in
             if let user = user {
-                Auth.auth().signIn(withEmail: user.email, password: password)
-                return completion(nil, "Username already exists")
-            } else {
-                let email = username + "@gmail.com"
-                createUser(username: username, password: password, email: email) { (user) in
-                    completion(user, nil)
+                Auth.auth().signIn(withEmail: user.email, password: password) { (user, error) in
+                    if error != nil {
+                        return completion(nil, "Incorrect username/password")
+                    }
                 }
+                return completion(user, nil)
+            } else {
+                return completion(nil, "new user")
             }
         }
     }

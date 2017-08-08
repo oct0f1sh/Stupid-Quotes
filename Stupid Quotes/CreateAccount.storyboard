@@ -79,11 +79,19 @@
                                     <action selector="createAccountButtonTapped:" destination="lEP-xo-44a" eventType="touchUpInside" id="Jsd-wU-WzN"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pjr-il-yOx">
+                                <rect key="frame" x="10" y="30" width="48" height="30"/>
+                                <state key="normal" title="Cancel">
+                                    <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" red="0.30588235294117649" green="0.46274509803921571" blue="0.90980392156862744" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                         <constraints>
                             <constraint firstItem="qN2-7o-cP0" firstAttribute="centerX" secondItem="Hzj-5w-sRq" secondAttribute="centerX" id="3sP-lJ-Y0i"/>
+                            <constraint firstItem="pjr-il-yOx" firstAttribute="top" secondItem="Yvf-hy-eSc" secondAttribute="bottom" constant="10" id="8s9-99-cxE"/>
                             <constraint firstItem="qN2-7o-cP0" firstAttribute="top" secondItem="Yvf-hy-eSc" secondAttribute="bottom" constant="85" id="ATc-3t-caV"/>
+                            <constraint firstItem="pjr-il-yOx" firstAttribute="leading" secondItem="Hzj-5w-sRq" secondAttribute="leading" constant="10" id="AVJ-fs-ivu"/>
                             <constraint firstItem="0fT-hW-vIH" firstAttribute="top" secondItem="qN2-7o-cP0" secondAttribute="bottom" constant="50" id="E2v-vh-zfP"/>
                             <constraint firstItem="xHG-Pq-S1A" firstAttribute="width" secondItem="ny6-JF-oyf" secondAttribute="width" id="HIx-Ng-DdC"/>
                             <constraint firstItem="0fT-hW-vIH" firstAttribute="centerX" secondItem="Hzj-5w-sRq" secondAttribute="centerX" id="Pkd-Xy-VFq"/>

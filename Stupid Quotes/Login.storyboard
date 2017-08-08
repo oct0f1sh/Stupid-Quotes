@@ -22,13 +22,13 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Login/Sign up" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="z3N-ak-Cr6">
-                                <rect key="frame" x="79" y="105" width="217" height="39"/>
+                                <rect key="frame" x="79" y="105" width="217" height="38.5"/>
                                 <fontDescription key="fontDescription" type="system" weight="heavy" pointSize="32"/>
                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="EUY-Dg-Vwq">
-                                <rect key="frame" x="62" y="194" width="250" height="60"/>
+                                <rect key="frame" x="62" y="193.5" width="250" height="60"/>
                                 <subviews>
                                     <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="username" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="f6g-6k-02B">
                                         <rect key="frame" x="0.0" y="0.0" width="250" height="30"/>
@@ -57,26 +57,43 @@
                                     <constraint firstItem="7WM-9Z-heC" firstAttribute="top" secondItem="f6g-6k-02B" secondAttribute="bottom" id="m73-kn-MSf"/>
                                 </constraints>
                             </view>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Oi0-Dv-HMh">
+                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="n26-aE-EaB">
                                 <rect key="frame" x="62" y="264" width="250" height="30"/>
-                                <color key="backgroundColor" red="0.33725490196078434" green="0.68235294117647061" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                <state key="normal" title="Continue">
-                                    <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                </state>
-                                <connections>
-                                    <action selector="continueButtonTapped:" destination="rjy-na-KPC" eventType="touchUpInside" id="V9f-SX-g8d"/>
-                                </connections>
-                            </button>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Oi0-Dv-HMh">
+                                        <rect key="frame" x="0.0" y="0.0" width="120" height="30"/>
+                                        <color key="backgroundColor" red="0.33725490196078434" green="0.68235294117647061" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                        <state key="normal" title="Log In">
+                                            <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="continueButtonTapped:" destination="rjy-na-KPC" eventType="touchUpInside" id="V9f-SX-g8d"/>
+                                            <segue destination="pKZ-SI-CFG" kind="show" identifier="logInSegue" id="aob-6G-WLr"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Sgq-W2-tkm">
+                                        <rect key="frame" x="130" y="0.0" width="120" height="30"/>
+                                        <color key="backgroundColor" red="0.33725490200000002" green="0.68235294120000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                        <state key="normal" title="Sign Up">
+                                            <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="continueButtonTapped:" destination="rjy-na-KPC" eventType="touchUpInside" id="9EE-tI-RFM"/>
+                                            <segue destination="WQW-B6-qoq" kind="show" identifier="signUpSegue" id="yti-Zz-6IF"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                            </stackView>
                         </subviews>
                         <color key="backgroundColor" red="0.30588235294117649" green="0.46274509803921571" blue="0.90980392156862744" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                         <constraints>
                             <constraint firstItem="z3N-ak-Cr6" firstAttribute="top" secondItem="bgw-PE-NqE" secondAttribute="bottom" constant="85" id="4SM-Mz-bqe"/>
                             <constraint firstItem="EUY-Dg-Vwq" firstAttribute="centerX" secondItem="z3N-ak-Cr6" secondAttribute="centerX" id="4em-DR-Gir"/>
-                            <constraint firstItem="Oi0-Dv-HMh" firstAttribute="centerX" secondItem="qeT-84-bSQ" secondAttribute="centerX" id="Xjp-qW-ume"/>
+                            <constraint firstItem="n26-aE-EaB" firstAttribute="width" secondItem="7WM-9Z-heC" secondAttribute="width" id="DdS-I7-R9b"/>
                             <constraint firstItem="z3N-ak-Cr6" firstAttribute="centerX" secondItem="qeT-84-bSQ" secondAttribute="centerX" id="a8v-Gb-2u8"/>
                             <constraint firstItem="EUY-Dg-Vwq" firstAttribute="top" secondItem="z3N-ak-Cr6" secondAttribute="bottom" constant="50" id="fYb-LP-ZFa"/>
-                            <constraint firstItem="Oi0-Dv-HMh" firstAttribute="top" secondItem="EUY-Dg-Vwq" secondAttribute="bottom" constant="10" id="kQq-BM-j2T"/>
-                            <constraint firstItem="Oi0-Dv-HMh" firstAttribute="width" secondItem="7WM-9Z-heC" secondAttribute="width" id="thw-m9-lIM"/>
+                            <constraint firstItem="n26-aE-EaB" firstAttribute="centerX" secondItem="qeT-84-bSQ" secondAttribute="centerX" id="gaF-4h-Ks8"/>
+                            <constraint firstItem="n26-aE-EaB" firstAttribute="top" secondItem="EUY-Dg-Vwq" secondAttribute="bottom" constant="10" id="vue-ht-bWs"/>
                         </constraints>
                     </view>
                     <connections>
@@ -88,6 +105,22 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="LFj-6S-g8G" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="340" y="-242.42878560719643"/>
+        </scene>
+        <!--CreateQuote-->
+        <scene sceneID="pC2-eS-CbY">
+            <objects>
+                <viewControllerPlaceholder storyboardName="CreateQuote" id="pKZ-SI-CFG" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="7Jp-jH-mfG" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="947" y="-333"/>
+        </scene>
+        <!--CreateAccount-->
+        <scene sceneID="tbo-Yp-TfF">
+            <objects>
+                <viewControllerPlaceholder storyboardName="CreateAccount" id="WQW-B6-qoq" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="TsV-J1-arh" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="958" y="-160"/>
         </scene>
     </scenes>
 </document>

@@ -29,9 +29,15 @@ class LoginViewController: UIViewController {
             if passwordTextField.text != nil && passwordTextField.text != "" {
                 LoginService.handleUser(username: usernameTextField.text!, password: passwordTextField.text!) { (user, error) in
                     if let error = error {
-                        self.showAlert(title: "Error", message: error, actionText: "OK")
+                        if error == "new user" {
+                            self.performSegue(withIdentifier: "signUpSegue", sender: self)
+                        } else {
+                            self.showAlert(title: "Error", message: error, actionText: "OK")
+                        }
                     } else {
+                        
                         if let user = user {
+                            self.performSegue(withIdentifier: "logInSegue", sender: self)
                             User.setCurrent(user)
                         }
                     }
