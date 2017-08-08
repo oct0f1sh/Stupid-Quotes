@@ -84,6 +84,9 @@
                                 <state key="normal" title="Cancel">
                                     <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
+                                <connections>
+                                    <segue destination="ugV-w6-GH8" kind="unwind" unwindAction="unwindToLoginWithSender:" id="Rs6-yF-XEv"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" red="0.30588235294117649" green="0.46274509803921571" blue="0.90980392156862744" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
@@ -105,11 +108,21 @@
                         <outlet property="emailTextField" destination="qau-Xd-FVg" id="GBg-Oj-pBR"/>
                         <outlet property="passwordTextField" destination="jvZ-Wc-8ia" id="JLZ-nZ-Bfs"/>
                         <outlet property="usernameTextField" destination="b00-Cd-kSr" id="3kF-T2-NcQ"/>
+                        <segue destination="ep4-KJ-sTP" kind="show" identifier="toHome" id="tEx-48-cLu"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ZBZ-Uh-nqP" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <exit id="ugV-w6-GH8" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="376.80000000000001" y="135.38230884557723"/>
+        </scene>
+        <!--CreateQuote-->
+        <scene sceneID="lEd-TI-zgX">
+            <objects>
+                <viewControllerPlaceholder storyboardName="CreateQuote" id="ep4-KJ-sTP" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="PhC-Ib-r6S" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1133" y="84"/>
         </scene>
     </scenes>
 </document>

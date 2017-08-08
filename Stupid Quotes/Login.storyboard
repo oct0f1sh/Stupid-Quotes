@@ -68,7 +68,6 @@
                                         </state>
                                         <connections>
                                             <action selector="continueButtonTapped:" destination="rjy-na-KPC" eventType="touchUpInside" id="V9f-SX-g8d"/>
-                                            <segue destination="pKZ-SI-CFG" kind="show" identifier="logInSegue" id="aob-6G-WLr"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Sgq-W2-tkm">
@@ -78,8 +77,7 @@
                                             <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                         </state>
                                         <connections>
-                                            <action selector="continueButtonTapped:" destination="rjy-na-KPC" eventType="touchUpInside" id="9EE-tI-RFM"/>
-                                            <segue destination="WQW-B6-qoq" kind="show" identifier="signUpSegue" id="yti-Zz-6IF"/>
+                                            <action selector="signUpButtonTapped:" destination="rjy-na-KPC" eventType="touchUpInside" id="jho-Sy-Xik"/>
                                         </connections>
                                     </button>
                                 </subviews>
@@ -100,6 +98,8 @@
                         <outlet property="inputBackgroundView" destination="qeT-84-bSQ" id="j6R-MF-si7"/>
                         <outlet property="passwordTextField" destination="7WM-9Z-heC" id="Fn6-yH-V86"/>
                         <outlet property="usernameTextField" destination="f6g-6k-02B" id="UMw-EC-czs"/>
+                        <segue destination="pKZ-SI-CFG" kind="show" identifier="logInSegue" id="JhA-oh-Z3a"/>
+                        <segue destination="WQW-B6-qoq" kind="show" identifier="signUpSegue" id="fEB-ub-X5z"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="LFj-6S-g8G" userLabel="First Responder" sceneMemberID="firstResponder"/>

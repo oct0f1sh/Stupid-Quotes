@@ -32,9 +32,6 @@
                                 <state key="normal" title="Friends">
                                     <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
-                                <connections>
-                                    <segue destination="7yj-Th-rNV" kind="show" id="VvV-Em-bri"/>
-                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GVr-SB-2fs">
                                 <rect key="frame" x="10" y="30" width="50" height="30"/>
@@ -65,15 +62,26 @@
                                 <fontDescription key="fontDescription" type="italicSystem" pointSize="17"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VeH-mB-IbS">
+                                <rect key="frame" x="310" y="627" width="55" height="30"/>
+                                <state key="normal" title="Log Out">
+                                    <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="logOutButtonTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="yrv-bQ-Oc7"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" red="0.38823529411764707" green="0.38823529411764707" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="TLr-xT-VZn" firstAttribute="top" secondItem="61l-TD-DqV" secondAttribute="bottom" constant="30" id="3cY-qx-FEr"/>
                             <constraint firstItem="61l-TD-DqV" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="6hz-Pp-4Ei"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="VeH-mB-IbS" secondAttribute="bottom" constant="10" id="ACc-Gg-az1"/>
                             <constraint firstItem="1gp-Mv-YRW" firstAttribute="width" secondItem="TLr-xT-VZn" secondAttribute="width" id="JPn-wd-mXr"/>
                             <constraint firstItem="GVr-SB-2fs" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" constant="10" id="MaW-g9-rbW"/>
                             <constraint firstItem="3O1-Qc-WjP" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="10" id="Mkl-D2-ldu"/>
                             <constraint firstAttribute="trailing" secondItem="1gp-Mv-YRW" secondAttribute="trailing" constant="40" id="XZO-om-77c"/>
+                            <constraint firstAttribute="trailing" secondItem="VeH-mB-IbS" secondAttribute="trailing" constant="10" id="Xp1-As-Fg7"/>
                             <constraint firstItem="1gp-Mv-YRW" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" constant="40" id="ZZZ-1z-rCB"/>
                             <constraint firstItem="TLr-xT-VZn" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="cVF-wK-u3C"/>
                             <constraint firstAttribute="trailing" secondItem="3O1-Qc-WjP" secondAttribute="trailing" constant="10" id="e11-JK-Tnb"/>
@@ -86,6 +94,7 @@
                         <outlet property="publishButton" destination="1gp-Mv-YRW" id="xsc-Ij-G6O"/>
                         <outlet property="quoteTextField" destination="TLr-xT-VZn" id="VzP-1M-EYn"/>
                         <outlet property="usernameLabel" destination="61l-TD-DqV" id="2OO-HF-Yhd"/>
+                        <segue destination="7yj-Th-rNV" kind="show" identifier="logInSegue" id="7E0-BO-OmM"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>

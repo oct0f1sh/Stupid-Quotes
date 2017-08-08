@@ -22,6 +22,7 @@
 		AE3532BD1F3915ED00CDA701 /* UIViewController+Alert.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE3532BC1F3915ED00CDA701 /* UIViewController+Alert.swift */; };
 		AE3532BF1F391B9B00CDA701 /* CreateAccount.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AE3532BE1F391B9B00CDA701 /* CreateAccount.storyboard */; };
 		AE3532C11F39242200CDA701 /* CreateAccountViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE3532C01F39242200CDA701 /* CreateAccountViewController.swift */; };
+		AE3532C31F3A499600CDA701 /* Storyboard+Utility.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE3532C21F3A499600CDA701 /* Storyboard+Utility.swift */; };
 		AEE697F71F38CF8F00B43FC0 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEE697F61F38CF8F00B43FC0 /* AppDelegate.swift */; };
 		AEE697F91F38CF8F00B43FC0 /* CreateQuote.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEE697F81F38CF8F00B43FC0 /* CreateQuote.swift */; };
 		AEE697FC1F38CF8F00B43FC0 /* CreateQuote.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AEE697FA1F38CF8F00B43FC0 /* CreateQuote.storyboard */; };
@@ -49,6 +50,7 @@
 		AE3532BC1F3915ED00CDA701 /* UIViewController+Alert.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIViewController+Alert.swift"; sourceTree = "<group>"; };
 		AE3532BE1F391B9B00CDA701 /* CreateAccount.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = CreateAccount.storyboard; sourceTree = "<group>"; };
 		AE3532C01F39242200CDA701 /* CreateAccountViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CreateAccountViewController.swift; sourceTree = "<group>"; };
+		AE3532C21F3A499600CDA701 /* Storyboard+Utility.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Storyboard+Utility.swift"; sourceTree = "<group>"; };
 		AEE697F31F38CF8F00B43FC0 /* Stupid Quotes.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Stupid Quotes.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		AEE697F61F38CF8F00B43FC0 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		AEE697F81F38CF8F00B43FC0 /* CreateQuote.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateQuote.swift; sourceTree = "<group>"; };
@@ -88,6 +90,7 @@
 			children = (
 				AE3532A41F38DC3F00CDA701 /* DatabaseReference+Location.swift */,
 				AE3532BC1F3915ED00CDA701 /* UIViewController+Alert.swift */,
+				AE3532C21F3A499600CDA701 /* Storyboard+Utility.swift */,
 			);
 			name = Extensions;
 			sourceTree = "<group>";
@@ -342,6 +345,7 @@
 				AE3532A21F38DC1C00CDA701 /* QuoteService.swift in Sources */,
 				AE3532C11F39242200CDA701 /* CreateAccountViewController.swift in Sources */,
 				AEE697F71F38CF8F00B43FC0 /* AppDelegate.swift in Sources */,
+				AE3532C31F3A499600CDA701 /* Storyboard+Utility.swift in Sources */,
 				AEE698141F38D46F00B43FC0 /* User.swift in Sources */,
 				AE3532AC1F38EA5300CDA701 /* GroupsViewController.swift in Sources */,
 				AE3532B31F38FB7600CDA701 /* Style.swift in Sources */,

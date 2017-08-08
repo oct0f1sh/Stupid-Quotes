@@ -9,18 +9,15 @@
 import Foundation
 import UIKit
 
-protocol ToSignUpDelegate {
-    func passUserInfo(username: String, password: String)
-}
-
 class LoginViewController: UIViewController {
     @IBOutlet weak var usernameTextField: UITextField!
     @IBOutlet weak var passwordTextField: UITextField!
     @IBOutlet var inputBackgroundView: UIView!
     
-    var delegate: ToSignUpDelegate? = nil
+    @IBAction func unwindToLogin(sender: UIStoryboardSegue) {
+    }
     
-    override func viewDidLoad() {
+    override func viewWillAppear(_ animated: Bool) {
         self.inputBackgroundView.layer.cornerRadius = Style.borderRadius
     }
     
@@ -29,13 +26,10 @@ class LoginViewController: UIViewController {
             if passwordTextField.text != nil && passwordTextField.text != "" {
                 LoginService.handleUser(username: usernameTextField.text!, password: passwordTextField.text!) { (user, error) in
                     if let error = error {
-                        if error == "new user" {
-                            self.performSegue(withIdentifier: "signUpSegue", sender: self)
-                        } else {
-                            self.showAlert(title: "Error", message: error, actionText: "OK")
-                        }
-                    } else {
-                        
+                        print("error: \(error.localizedDescription)")
+                        self.showAlert(title: "Error", message: error.localizedDescription, actionText: "Ok")
+                        return
+                    } else if error == nil {
                         if let user = user {
                             self.performSegue(withIdentifier: "logInSegue", sender: self)
                             User.setCurrent(user)
@@ -48,5 +42,9 @@ class LoginViewController: UIViewController {
         } else {
             self.showAlert(title: "Blank Username", message: "Please enter a username", actionText: "Ok")
         }
+    }
+    
+    @IBAction func signUpButtonTapped(_ sender: Any) {
+        self.performSegue(withIdentifier: "signUpSegue", sender: self)
     }
 }

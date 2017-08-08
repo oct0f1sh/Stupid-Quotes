@@ -12,22 +12,24 @@ import Firebase
 typealias FIRUser = FirebaseAuth.User
 
 class LoginService {
-    static func handleUser(username: String, password: String, completion: @escaping (User?, String?) -> Void) {
+    static func handleUser(username: String, password: String, completion: @escaping (User?, Error?) -> Void) {
         doesUserExist(username: username) { (user) in
             if let user = user {
-                Auth.auth().signIn(withEmail: user.email, password: password) { (user, error) in
+                Auth.auth().signIn(withEmail: user.email, password: password) { (other, error) in
                     if error != nil {
-                        return completion(nil, "Incorrect username/password")
+                        return completion(nil, error)
+                    } else {
+                        return completion(user, nil)
                     }
                 }
-                return completion(user, nil)
             } else {
-                return completion(nil, "new user")
+                let noUser = NSError(domain: "Login", code: 69, userInfo: [NSLocalizedDescriptionKey : "User does not exist"])
+                return completion(nil, noUser)
             }
         }
     }
     
-    static func createUser(username: String, password: String, email: String, completion: @escaping (User) -> Void) {
+    static func createUser(username: String, password: String, email: String, completion: @escaping (User?, Error?) -> Void) {
         let ref = DatabaseReference.toLocation(.users)
         
         let uid = ref.childByAutoId().key
@@ -40,13 +42,12 @@ class LoginService {
             if error == nil {
                 print("Registered")
                 ref.child(uid).setValue(userDict)
+                let user = User(uid: uid, username: username, email: email)
+                completion(user, nil)
             } else {
-                print("Error registering: \(String(describing: error))")
+                completion(nil, error)
             }
         })
-        
-        let user = User(uid: uid, username: username, email: email)
-        completion(user)
     }
     
     static func doesUserExist(username: String, completion: @escaping (User?) -> Void) {
