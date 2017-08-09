@@ -73,6 +73,9 @@
                                 <state key="normal" title="Quote">
                                     <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
+                                <connections>
+                                    <segue destination="kda-Gf-H8U" kind="unwind" unwindAction="unwindToCreateQuoteWithSegue:" id="aYB-gc-rgc"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" red="0.70196078431372544" green="0.33725490196078434" blue="1" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
@@ -90,6 +93,7 @@
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="pP7-8f-AXP" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <exit id="kda-Gf-H8U" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="-887.20000000000005" y="865.81709145427294"/>
         </scene>

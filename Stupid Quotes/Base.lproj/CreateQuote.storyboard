@@ -9,6 +9,14 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
+        <!--Groups-->
+        <scene sceneID="nHd-ze-MJF">
+            <objects>
+                <viewControllerPlaceholder storyboardName="Groups" id="Lsl-pe-jEs" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="qF3-Y5-bnU" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="33" y="544"/>
+        </scene>
         <!--Create Quote-->
         <scene sceneID="tne-QT-ifu">
             <objects>
@@ -35,9 +43,12 @@
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GVr-SB-2fs">
                                 <rect key="frame" x="10" y="30" width="50" height="30"/>
-                                <state key="normal" title="Groups">
+                                <state key="normal" title="Quotes">
                                     <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
+                                <connections>
+                                    <segue destination="Lsl-pe-jEs" kind="show" id="Pfc-TL-kga"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1gp-Mv-YRW">
                                 <rect key="frame" x="40" y="205.5" width="295" height="40"/>
@@ -59,7 +70,7 @@
                                     <constraint firstAttribute="height" constant="30" id="2Pe-Ac-Eo7"/>
                                 </constraints>
                                 <nil key="textColor"/>
-                                <fontDescription key="fontDescription" type="italicSystem" pointSize="17"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VeH-mB-IbS">

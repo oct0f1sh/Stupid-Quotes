@@ -14,8 +14,11 @@ class CreateQuote: UIViewController {
     @IBOutlet weak var publishButton: UIButton!
     @IBOutlet weak var quoteTextField: UITextField!
     
+    @IBAction func unwindToCreateQuote(segue: UIStoryboardSegue) {
+    }
+    
     @IBAction func publishButtonTapped(_ sender: Any) {
-        
+        QuoteService.createQuote(quote: quoteTextField.text!, user: User.current, groupID: "0")
     }
     
     override func viewWillAppear(_ animated: Bool) {
