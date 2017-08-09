@@ -10,6 +10,7 @@ import Foundation
 import UIKit
 
 class QuoteCell: UITableViewCell {
-    @IBOutlet weak var quoteLabel: UILabel!
     @IBOutlet weak var usernameLabel: UILabel!
+    @IBOutlet weak var quoteTextView: UITextView!
+    @IBOutlet weak var subjectLabel: UILabel!
 }

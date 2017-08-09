@@ -18,7 +18,7 @@ class CreateQuote: UIViewController {
     }
     
     @IBAction func publishButtonTapped(_ sender: Any) {
-        QuoteService.createQuote(quote: quoteTextField.text!, user: User.current, groupID: "0")
+        
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -35,9 +35,10 @@ class CreateQuote: UIViewController {
     }
     
     @IBAction func friendsButtonTapped(_ sender: Any) {
-        GroupService.newGroup(user: User.current, groupName: "dumb", completion: { (group) in
-            
-        })
+        let test = DatabaseReference.toLocation(.root)
+        let array: NSMutableArray = ["nice", "neat", "wow"]
+        
+        test.child("test").setValue(array)
     }
 }
 

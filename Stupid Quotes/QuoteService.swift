@@ -10,11 +10,12 @@ import Foundation
 import FirebaseDatabase
 
 struct QuoteService {
-    static func createQuote(quote: String, user: User, groupID: String) {
+    static func createQuote(quote: String, user: User, subject: String, groupID: String) {
         let ref = DatabaseReference.toLocation(.group(groupID: groupID))
         
         let quoteDict: [String:Any] = ["quote" : quote,
-                                       "author" : user.username]
+                                       "author" : user.username,
+                                       "subject" : subject]
         
         ref.child("quotes").childByAutoId().setValue(quoteDict)
         

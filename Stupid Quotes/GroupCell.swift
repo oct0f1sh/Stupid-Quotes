@@ -13,4 +13,5 @@ class GroupCell: UITableViewCell {
     @IBOutlet weak var groupNameLabel: UILabel!
     @IBOutlet weak var memberCountLabel: UILabel!
     @IBOutlet weak var quotesCountLabel: UILabel!
+    @IBOutlet weak var membersLabel: UILabel!
 }

@@ -76,4 +76,15 @@ struct GroupService {
         
         return completion(key)
     }
+    
+    static func deleteGroup(groupID: String, completion: @escaping () -> Void) {
+        let ref = DatabaseReference.toLocation(.group(groupID: groupID))
+        let memRef = DatabaseReference.toLocation(.groupMembersOfID(groupID: groupID))
+        
+        ref.removeValue()
+        memRef.removeValue()
+        print("group deleted")
+        
+        completion()
+    }
 }
