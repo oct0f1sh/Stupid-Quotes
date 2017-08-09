@@ -33,5 +33,11 @@ class CreateQuote: UIViewController {
             self.showAlert(title: "Error", message: signOutError.localizedDescription, actionText: "Ok")
         }
     }
+    
+    @IBAction func friendsButtonTapped(_ sender: Any) {
+        GroupService.newGroup(user: User.current, groupName: "dumb", completion: { (group) in
+            
+        })
+    }
 }
 

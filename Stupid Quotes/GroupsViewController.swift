@@ -10,7 +10,8 @@ import Foundation
 import UIKit
 
 class GroupsViewController: UIViewController {
-    var quotes = [Quote]() {
+    @IBOutlet weak var tableViewBackground: UIView!
+    var groups = [Group]() {
         didSet {
             self.tableView.reloadData()
         }
@@ -19,26 +20,33 @@ class GroupsViewController: UIViewController {
     @IBOutlet weak var tableView: UITableView!
     
     override func viewWillAppear(_ animated: Bool) {
-        QuoteService.getQuotes(groupID: "0", completion: { (quotes) in
-            if let quotes = quotes {
-                self.quotes = quotes
+        UserService.getUserGroups(uid: User.current.uid) { (groupList) in
+            if let groupList = groupList {
+                self.groups = groupList
+                self.tableView.reloadData()
             }
-        })
+        }
+    }
+    
+    override func viewWillLayoutSubviews() {
+        super.viewWillLayoutSubviews()
+        
+        self.tableViewBackground.roundCorners([.topLeft, .topRight], radius: Style.roundedCorner)
     }
 }
 
 extension GroupsViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return quotes.count
+        return groups.count
     }
 }
 
 extension GroupsViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let quote = quotes[indexPath.row]
-        let cell: QuoteCell = tableView.dequeueReusableCell()
-        cell.quoteLabel.text = quote.quote
-        cell.usernameLabel.text = quote.author
+        let group = groups[indexPath.row]
+        let cell: GroupCell = tableView.dequeueReusableCell()
+        cell.groupNameLabel.text = group.groupName
+        cell.memberCountLabel.text = String(group.usersInGroup.count)
         
         return cell
     }

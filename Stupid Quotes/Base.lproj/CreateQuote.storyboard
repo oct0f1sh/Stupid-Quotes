@@ -40,6 +40,9 @@
                                 <state key="normal" title="Friends">
                                     <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
+                                <connections>
+                                    <action selector="friendsButtonTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="ual-hd-eQ5"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GVr-SB-2fs">
                                 <rect key="frame" x="10" y="30" width="50" height="30"/>

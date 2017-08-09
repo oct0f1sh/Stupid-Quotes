@@ -11,4 +11,5 @@ import UIKit
 
 struct Style {
     static let borderRadius: CGFloat = 6
+    static let roundedCorner: CGFloat = 10
 }
