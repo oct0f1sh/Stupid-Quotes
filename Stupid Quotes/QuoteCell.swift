@@ -10,7 +10,11 @@ import Foundation
 import UIKit
 
 class QuoteCell: UITableViewCell {
-    @IBOutlet weak var usernameLabel: UILabel!
     @IBOutlet weak var quoteTextView: UITextView!
     @IBOutlet weak var subjectLabel: UILabel!
+    
+    override func awakeFromNib() {
+        self.quoteTextView.textContainer.lineFragmentPadding = 0
+        self.quoteTextView.textContainerInset = UIEdgeInsets.zero
+    }
 }

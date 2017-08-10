@@ -23,6 +23,8 @@ class QuotesViewController: UIViewController {
     
     override func viewDidLoad() {
         getQuotes()
+        tableView.estimatedRowHeight = 70
+        tableView.rowHeight = UITableViewAutomaticDimension
     }
     
     func getQuotes() {
@@ -54,10 +56,17 @@ extension QuotesViewController: UITableViewDataSource {
         let quote = quotes[indexPath.row]
         let cell: QuoteCell = tableView.dequeueReusableCell()
         
-        cell.quoteTextView.text = "\"\(quote.quote)\""
-        cell.subjectLabel.text = "-\(quote.subject)"
-        cell.usernameLabel.text = quote.author
+        cell.quoteTextView.delegate = self
+        cell.quoteTextView.text = "\(quote.quote)"
+        cell.subjectLabel.text = "\(quote.subject)"
         
         return cell
+    }
+}
+
+extension QuotesViewController: UITextViewDelegate {
+    func textViewDidChange(_ textView: UITextView) {
+        tableView.beginUpdates()
+        tableView.endUpdates()
     }
 }
