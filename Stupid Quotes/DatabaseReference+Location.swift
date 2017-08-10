@@ -41,7 +41,7 @@ extension DatabaseReference {
                 return root.child("group_members").child(groupID)
             case .groupMembers():
                 return root.child("group_members")
-            case .quote(let quoteID, let groupID):
+            case .quote(let groupID, let quoteID):
                 return root.child("groups").child(groupID).child("quotes").child(quoteID)
             }
         }

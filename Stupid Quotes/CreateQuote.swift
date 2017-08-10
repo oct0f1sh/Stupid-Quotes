@@ -42,10 +42,7 @@ class CreateQuote: UIViewController {
     }
     
     @IBAction func friendsButtonTapped(_ sender: Any) {
-        let test = DatabaseReference.toLocation(.root)
-        let array: NSMutableArray = ["nice", "neat", "wow"]
         
-        test.child("test").setValue(array)
     }
 }
 
