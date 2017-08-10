@@ -54,7 +54,7 @@ extension QuotesViewController: UITableViewDataSource {
         let quote = quotes[indexPath.row]
         let cell: QuoteCell = tableView.dequeueReusableCell()
         
-        cell.quoteTextView.text = quote.quote
+        cell.quoteTextView.text = "\"\(quote.quote)\""
         cell.subjectLabel.text = "-\(quote.subject)"
         cell.usernameLabel.text = quote.author
         

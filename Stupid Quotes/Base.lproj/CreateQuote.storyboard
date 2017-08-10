@@ -6,6 +6,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12089"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -53,8 +54,32 @@
                                     <segue destination="Lsl-pe-jEs" kind="show" id="Pfc-TL-kga"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VeH-mB-IbS">
+                                <rect key="frame" x="310" y="627" width="55" height="30"/>
+                                <state key="normal" title="Log Out">
+                                    <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="logOutButtonTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="yrv-bQ-Oc7"/>
+                                </connections>
+                            </button>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="Quote goes here" translatesAutoresizingMaskIntoConstraints="NO" id="f0d-m2-XkB">
+                                <rect key="frame" x="41" y="125.5" width="293" height="150"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="150" id="Gqj-KW-kWD"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Who said this?" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="hsB-JN-Wk4">
+                                <rect key="frame" x="40" y="285.5" width="295" height="30"/>
+                                <color key="backgroundColor" red="0.38841816782951355" green="0.38845160603523254" blue="0.96480154991149902" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1gp-Mv-YRW">
-                                <rect key="frame" x="40" y="205.5" width="295" height="40"/>
+                                <rect key="frame" x="40" y="325.5" width="295" height="40"/>
                                 <color key="backgroundColor" red="0.70196078431372544" green="0.33725490196078434" blue="1" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="40" id="iQP-dV-0fg"/>
@@ -67,46 +92,34 @@
                                     <action selector="publishButtonTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="0va-7P-syw"/>
                                 </connections>
                             </button>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Stupid Quote" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="TLr-xT-VZn">
-                                <rect key="frame" x="40" y="145.5" width="295" height="30"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="30" id="2Pe-Ac-Eo7"/>
-                                </constraints>
-                                <nil key="textColor"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <textInputTraits key="textInputTraits"/>
-                            </textField>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VeH-mB-IbS">
-                                <rect key="frame" x="310" y="627" width="55" height="30"/>
-                                <state key="normal" title="Log Out">
-                                    <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                </state>
-                                <connections>
-                                    <action selector="logOutButtonTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="yrv-bQ-Oc7"/>
-                                </connections>
-                            </button>
                         </subviews>
                         <color key="backgroundColor" red="0.38823529411764707" green="0.38823529411764707" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="TLr-xT-VZn" firstAttribute="top" secondItem="61l-TD-DqV" secondAttribute="bottom" constant="30" id="3cY-qx-FEr"/>
                             <constraint firstItem="61l-TD-DqV" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="6hz-Pp-4Ei"/>
+                            <constraint firstItem="hsB-JN-Wk4" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" constant="40" id="8pZ-Il-1Ey"/>
                             <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="VeH-mB-IbS" secondAttribute="bottom" constant="10" id="ACc-Gg-az1"/>
-                            <constraint firstItem="1gp-Mv-YRW" firstAttribute="width" secondItem="TLr-xT-VZn" secondAttribute="width" id="JPn-wd-mXr"/>
+                            <constraint firstItem="hsB-JN-Wk4" firstAttribute="top" secondItem="f0d-m2-XkB" secondAttribute="bottom" constant="10" id="AXG-Am-Nzo"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="f0d-m2-XkB" secondAttribute="trailing" constant="25" id="E2W-AW-ffa"/>
+                            <constraint firstItem="f0d-m2-XkB" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="25" id="FcI-ah-uJv"/>
                             <constraint firstItem="GVr-SB-2fs" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" constant="10" id="MaW-g9-rbW"/>
                             <constraint firstItem="3O1-Qc-WjP" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="10" id="Mkl-D2-ldu"/>
                             <constraint firstAttribute="trailing" secondItem="1gp-Mv-YRW" secondAttribute="trailing" constant="40" id="XZO-om-77c"/>
                             <constraint firstAttribute="trailing" secondItem="VeH-mB-IbS" secondAttribute="trailing" constant="10" id="Xp1-As-Fg7"/>
                             <constraint firstItem="1gp-Mv-YRW" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" constant="40" id="ZZZ-1z-rCB"/>
-                            <constraint firstItem="TLr-xT-VZn" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="cVF-wK-u3C"/>
                             <constraint firstAttribute="trailing" secondItem="3O1-Qc-WjP" secondAttribute="trailing" constant="10" id="e11-JK-Tnb"/>
+                            <constraint firstItem="hsB-JN-Wk4" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="fBP-o9-rOs"/>
                             <constraint firstItem="61l-TD-DqV" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="75" id="mJw-kD-B9n"/>
+                            <constraint firstItem="1gp-Mv-YRW" firstAttribute="top" secondItem="hsB-JN-Wk4" secondAttribute="bottom" constant="10" id="nZv-et-d01"/>
+                            <constraint firstAttribute="trailing" secondItem="hsB-JN-Wk4" secondAttribute="trailing" constant="40" id="rT9-wI-Bc7"/>
                             <constraint firstItem="GVr-SB-2fs" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="10" id="rzD-M3-bvh"/>
-                            <constraint firstItem="1gp-Mv-YRW" firstAttribute="top" secondItem="TLr-xT-VZn" secondAttribute="bottom" constant="30" id="vuH-ez-48s"/>
+                            <constraint firstItem="f0d-m2-XkB" firstAttribute="top" secondItem="61l-TD-DqV" secondAttribute="bottom" constant="10" id="suS-rd-Ss6"/>
+                            <constraint firstItem="1gp-Mv-YRW" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="weM-5L-equ"/>
                         </constraints>
                     </view>
                     <connections>
                         <outlet property="publishButton" destination="1gp-Mv-YRW" id="xsc-Ij-G6O"/>
-                        <outlet property="quoteTextField" destination="TLr-xT-VZn" id="VzP-1M-EYn"/>
+                        <outlet property="quoteTextView" destination="f0d-m2-XkB" id="oHB-FB-G0W"/>
+                        <outlet property="subjectTextField" destination="hsB-JN-Wk4" id="586-sk-VBT"/>
                         <outlet property="usernameLabel" destination="61l-TD-DqV" id="2OO-HF-Yhd"/>
                         <segue destination="7yj-Th-rNV" kind="show" identifier="logInSegue" id="7E0-BO-OmM"/>
                     </connections>

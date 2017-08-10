@@ -12,13 +12,20 @@ import Firebase
 class CreateQuote: UIViewController {
     @IBOutlet weak var usernameLabel: UILabel!
     @IBOutlet weak var publishButton: UIButton!
-    @IBOutlet weak var quoteTextField: UITextField!
+    @IBOutlet weak var quoteTextView: UITextView!
+    @IBOutlet weak var subjectTextField: UITextField!
     
     @IBAction func unwindToCreateQuote(segue: UIStoryboardSegue) {
     }
     
     @IBAction func publishButtonTapped(_ sender: Any) {
-        
+        UserService.getUserGroups(uid: User.current.uid) { (groups) in
+            if let groups = groups {
+                let group = groups[0]
+                
+                QuoteService.createQuote(quote: self.quoteTextView.text, user: User.current, subject: self.subjectTextField.text!, groupID: group.groupID)
+            }
+        }
     }
     
     override func viewWillAppear(_ animated: Bool) {
