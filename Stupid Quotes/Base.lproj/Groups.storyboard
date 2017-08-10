@@ -98,6 +98,7 @@
                                                     <outlet property="memberCountLabel" destination="Xt5-XF-F4t" id="Pvt-R2-6yT"/>
                                                     <outlet property="membersLabel" destination="Qp5-yb-Nxg" id="6SB-2s-qH7"/>
                                                     <outlet property="quotesCountLabel" destination="ckI-XO-fuc" id="Pdl-yP-au3"/>
+                                                    <outlet property="quotesLabel" destination="kql-3B-tfw" id="3LH-zI-ac9"/>
                                                     <segue destination="ztg-H6-wvX" kind="show" id="Fu4-dc-shm"/>
                                                 </connections>
                                             </tableViewCell>

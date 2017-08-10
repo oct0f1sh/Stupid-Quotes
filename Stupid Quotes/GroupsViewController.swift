@@ -84,7 +84,6 @@ extension GroupsViewController: UITableViewDelegate {
                     
                     GroupService.deleteGroup(groupID: group.groupID) { () in
                         self.getGroups()
-                        print("group deleted")
                     }
                 } else {
                     print("group not deleted")
@@ -106,6 +105,9 @@ extension GroupsViewController: UITableViewDataSource {
         QuoteService.getQuotes(groupID: group.groupID, completion: { (quotes) in
             if let quotes = quotes {
                 cell.quotesCountLabel.text = String(quotes.count)
+                if quotes.count == 1 {
+                    cell.quotesLabel.text = "quote"
+                }
             } else {
                 cell.quotesCountLabel.text = "0"
             }

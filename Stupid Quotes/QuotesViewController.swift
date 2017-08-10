@@ -49,6 +49,34 @@ extension QuotesViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return quotes.count
     }
+    
+    func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
+        if User.current.username == quotes[indexPath.row].author {
+            return true
+        } else {
+            return false
+        }
+    }
+    
+    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
+        if (editingStyle == UITableViewCellEditingStyle.delete) {
+            print("delete tapped")
+            
+            self.confirmAlert(title: "Delete?", message: "Are you sure you want to delete this quote?") { (result) in
+                if result {
+                    let quote = self.quotes[indexPath.row]
+                    
+                    if let group = self.group {
+                        QuoteService.deleteQuote(quote: quote, group: group) { () in
+                            self.getQuotes()
+                        }
+                    }
+                } else {
+                    print("quote not deleted")
+                }
+            }
+        }
+    }
 }
 
 extension QuotesViewController: UITableViewDataSource {
