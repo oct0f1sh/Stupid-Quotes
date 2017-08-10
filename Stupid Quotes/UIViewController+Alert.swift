@@ -39,6 +39,29 @@ extension UIViewController {
         self.present(alertController, animated: true, completion: nil)
     }
     
+    func showInviteFriendAlert(completion: @escaping (String?) -> Void) {
+        let alertController = UIAlertController(title: "Invite Friend", message: "Enter the username of the friend you would like to invite", preferredStyle: .alert)
+        
+        let confirmAction = UIAlertAction(title: "Invite", style: .default) { (_) in
+            if let field = alertController.textFields?[0] {
+                completion(field.text)
+            } else {
+                completion(nil)
+            }
+        }
+        
+        let cancelAction = UIAlertAction(title: "Cancel", style: .cancel) { (_) in }
+        
+        alertController.addTextField { (textField) in
+            textField.placeholder = "Friend Username"
+        }
+        
+        alertController.addAction(confirmAction)
+        alertController.addAction(cancelAction)
+        
+        self.present(alertController, animated: true, completion: nil)
+    }
+    
     func confirmAlert(title: String, message: String, completion: @escaping (Bool) -> Void) {
         let alertController = UIAlertController(title: title, message: message, preferredStyle: .alert)
         

@@ -43,6 +43,22 @@ class QuotesViewController: UIViewController {
         
         self.tableViewBackground.roundCorners([.topLeft, .topRight], radius: Style.roundedCorner)
     }
+    
+    @IBAction func inviteFriendsTapped(_ sender: Any) {
+        self.showInviteFriendAlert(completion: { (friend) in
+            if let friend = friend {
+                if let group = self.group {
+                    GroupService.addUserToGroup(groupID: group.groupID, username: friend, completion: { (result) in
+                        if let result = result {
+                            if result == "failure" {
+                                self.showAlert(title: "Error", message: "User does not exist", actionText: "Ok")
+                            }
+                        }
+                    })
+                }
+            }
+        })
+    }
 }
 
 extension QuotesViewController: UITableViewDelegate {

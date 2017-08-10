@@ -31,6 +31,20 @@ struct GroupService {
         })
     }
     
+    static func addUserToGroup(groupID: String, username: String, completion: @escaping (String?) -> Void) {
+        let ref = DatabaseReference.toLocation(.groupMembersOfID(groupID: groupID))
+        
+        UserService.getUserWithUsername(username: username, completion: { (user) in
+            if let user = user {
+                ref.child(user.uid).setValue(user.username)
+                
+                completion("success")
+            } else {
+                completion("failure")
+            }
+        })
+    }
+    
     static func getUsersInGroup(groupID: String, completion: @escaping ([User]?) -> Void) {
         let memRef = DatabaseReference.toLocation(.groupMembersOfID(groupID: groupID))
         

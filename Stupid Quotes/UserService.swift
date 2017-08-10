@@ -27,6 +27,29 @@ struct UserService {
         })
     }
     
+    static func getUserWithUsername(username: String, completion: @escaping (User?) -> Void) {
+        let ref = DatabaseReference.toLocation(.users)
+        
+        let dGroup = DispatchGroup()
+        
+        ref.observeSingleEvent(of: .value, with: { (snapshot) in
+            guard let snapshot = snapshot.children.allObjects as? [DataSnapshot]
+                else { return completion(nil) }
+            
+            for user in snapshot {
+                dGroup.enter()
+                if user.childSnapshot(forPath: "username").value as? String == username {
+                    let createdUser = User(snapshot: user)
+                    dGroup.leave()
+                    return completion(createdUser)
+                } else {
+                    dGroup.leave()
+                }
+                completion(nil)
+            }
+        })
+    }
+    
     static func getUserGroups(uid: String, completion: @escaping ([Group]?) -> Void) {
         let ref = DatabaseReference.toLocation(.groupMembers())
         

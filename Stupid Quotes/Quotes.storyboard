@@ -89,23 +89,32 @@
                                     <segue destination="yTg-we-OjA" kind="unwind" unwindAction="unwindToGroupsWithSegue:" id="iE6-2x-rl2"/>
                                 </connections>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Quotes" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MOa-Mt-KS7">
-                                <rect key="frame" x="157" y="27" width="62" height="23"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Group Quotes" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MOa-Mt-KS7">
+                                <rect key="frame" x="128.5" y="27" width="119.5" height="23"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="19"/>
                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="contactAdd" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MSm-Kq-ln1">
+                                <rect key="frame" x="10" y="28" width="22" height="22"/>
+                                <color key="tintColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <connections>
+                                    <action selector="inviteFriendsTapped:" destination="aIw-NY-ias" eventType="touchUpInside" id="jiJ-Iz-kAI"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" red="0.47450980392156861" green="0.30588235294117649" blue="0.90980392156862744" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
                             <constraint firstItem="qTz-7J-c9k" firstAttribute="leading" secondItem="uWM-ZE-WXc" secondAttribute="leading" id="6Hl-iH-JVr"/>
                             <constraint firstItem="I0K-t4-6Ra" firstAttribute="top" secondItem="qTz-7J-c9k" secondAttribute="bottom" id="Cld-QA-Dwx"/>
+                            <constraint firstItem="MSm-Kq-ln1" firstAttribute="leading" secondItem="uWM-ZE-WXc" secondAttribute="leading" constant="10" id="ZYu-ci-KBZ"/>
                             <constraint firstAttribute="trailing" secondItem="qTz-7J-c9k" secondAttribute="trailing" id="bPJ-mK-DaM"/>
                             <constraint firstItem="qTz-7J-c9k" firstAttribute="top" secondItem="MOa-Mt-KS7" secondAttribute="bottom" constant="10" id="gBK-Zr-bv5"/>
                             <constraint firstItem="MOa-Mt-KS7" firstAttribute="centerX" secondItem="uWM-ZE-WXc" secondAttribute="centerX" id="lF4-qq-TWf"/>
                             <constraint firstItem="qTz-7J-c9k" firstAttribute="top" secondItem="ESB-wJ-9Ec" secondAttribute="bottom" constant="40" id="m2f-8T-pyj"/>
                             <constraint firstAttribute="trailing" secondItem="iwY-Hl-aRn" secondAttribute="trailing" constant="10" id="moA-pO-038"/>
                             <constraint firstItem="qTz-7J-c9k" firstAttribute="top" secondItem="iwY-Hl-aRn" secondAttribute="bottom" constant="6" id="nOV-Pw-1qE"/>
+                            <constraint firstItem="qTz-7J-c9k" firstAttribute="top" secondItem="MSm-Kq-ln1" secondAttribute="bottom" constant="10" id="vRo-KC-XOR"/>
                         </constraints>
                     </view>
                     <connections>
