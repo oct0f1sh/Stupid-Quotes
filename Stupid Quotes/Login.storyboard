@@ -95,8 +95,10 @@
                         </constraints>
                     </view>
                     <connections>
-                        <outlet property="inputBackgroundView" destination="qeT-84-bSQ" id="j6R-MF-si7"/>
+                        <outlet property="inputBackgroundView" destination="EUY-Dg-Vwq" id="mgB-0q-N9z"/>
+                        <outlet property="loginButton" destination="Oi0-Dv-HMh" id="ang-07-bOm"/>
                         <outlet property="passwordTextField" destination="7WM-9Z-heC" id="Fn6-yH-V86"/>
+                        <outlet property="signupButton" destination="Sgq-W2-tkm" id="J4A-h3-FnK"/>
                         <outlet property="usernameTextField" destination="f6g-6k-02B" id="UMw-EC-czs"/>
                         <segue destination="pKZ-SI-CFG" kind="show" identifier="logInSegue" id="JhA-oh-Z3a"/>
                         <segue destination="WQW-B6-qoq" kind="show" identifier="signUpSegue" id="fEB-ub-X5z"/>

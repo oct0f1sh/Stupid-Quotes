@@ -105,6 +105,7 @@
                     <connections>
                         <outlet property="backgroundView" destination="0fT-hW-vIH" id="S8B-cl-DkU"/>
                         <outlet property="confirmPasswordTextField" destination="ny6-JF-oyf" id="5Iu-OC-La5"/>
+                        <outlet property="createAccountButton" destination="xHG-Pq-S1A" id="u2A-Wk-7Q5"/>
                         <outlet property="emailTextField" destination="qau-Xd-FVg" id="GBg-Oj-pBR"/>
                         <outlet property="passwordTextField" destination="jvZ-Wc-8ia" id="JLZ-nZ-Bfs"/>
                         <outlet property="usernameTextField" destination="b00-Cd-kSr" id="3kF-T2-NcQ"/>

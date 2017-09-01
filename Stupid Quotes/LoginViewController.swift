@@ -13,12 +13,16 @@ class LoginViewController: UIViewController {
     @IBOutlet weak var usernameTextField: UITextField!
     @IBOutlet weak var passwordTextField: UITextField!
     @IBOutlet var inputBackgroundView: UIView!
+    @IBOutlet weak var loginButton: UIButton!
+    @IBOutlet weak var signupButton: UIButton!
     
     @IBAction func unwindToLogin(sender: UIStoryboardSegue) {
     }
     
     override func viewWillAppear(_ animated: Bool) {
-        self.inputBackgroundView.layer.cornerRadius = Style.borderRadius
+        self.inputBackgroundView.roundCorners([.allCorners], radius: Style.roundedCorner)
+        self.loginButton.layer.cornerRadius = Style.borderRadius
+        self.signupButton.layer.cornerRadius = Style.borderRadius
     }
     
     @IBAction func continueButtonTapped(_ sender: Any) {

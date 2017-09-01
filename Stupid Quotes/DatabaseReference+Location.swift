@@ -20,6 +20,7 @@ extension DatabaseReference {
         case groupMembers()
         case groupMembersOfID(groupID: String)
         case quote(groupID: String, quoteID: String)
+        case friendWithID(uid: String)
         
         func asDatabaseReference() -> DatabaseReference {
             let root = Database.database().reference()
@@ -43,6 +44,8 @@ extension DatabaseReference {
                 return root.child("group_members")
             case .quote(let groupID, let quoteID):
                 return root.child("groups").child(groupID).child("quotes").child(quoteID)
+            case .friendWithID(let uid):
+                return root.child("user_friends").child(uid)
             }
         }
     }

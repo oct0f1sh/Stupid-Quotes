@@ -15,6 +15,7 @@ class CreateAccountViewController: UIViewController {
     @IBOutlet weak var emailTextField: UITextField!
     @IBOutlet weak var passwordTextField: UITextField!
     @IBOutlet weak var confirmPasswordTextField: UITextField!
+    @IBOutlet weak var createAccountButton: UIButton!
     
     @IBAction func createAccountButtonTapped(_ sender: Any) {
         if usernameTextField.text != "" {
@@ -46,5 +47,10 @@ class CreateAccountViewController: UIViewController {
         } else {
             self.showAlert(title: "Blank Username", message: "Please enter a username", actionText: "Ok")
         }
+    }
+    
+    override func viewDidLoad() {
+        self.backgroundView.roundCorners([.allCorners], radius: Style.roundedCorner)
+        self.createAccountButton.layer.cornerRadius = Style.borderRadius
     }
 }

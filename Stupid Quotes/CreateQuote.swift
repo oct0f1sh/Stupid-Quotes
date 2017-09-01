@@ -33,12 +33,16 @@ class CreateQuote: UIViewController {
     }
     
     @IBAction func logOutButtonTapped(_ sender: Any) {
-        do {
-            try Auth.auth().signOut()
-        } catch let signOutError as NSError {
-            self.showAlert(title: "Error", message: signOutError.localizedDescription, actionText: "Ok")
-        }
-        self.performSegue(withIdentifier: "logInSegue", sender: self)
+        self.confirmAlert(title: "Log out?", message: "Are you sure you want to log out?", completion: { (confirmed) in
+            if confirmed {
+                do {
+                    try Auth.auth().signOut()
+                } catch let signOutError as NSError {
+                    self.showAlert(title: "Error", message: signOutError.localizedDescription, actionText: "Ok")
+                }
+                self.performSegue(withIdentifier: "logInSegue", sender: self)
+            }
+        })
     }
     
     @IBAction func friendsButtonTapped(_ sender: Any) {

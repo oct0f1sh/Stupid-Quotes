@@ -30,6 +30,9 @@
 		AE3532CE1F3BA86B00CDA701 /* UIView+RoundedCorners.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE3532CD1F3BA86B00CDA701 /* UIView+RoundedCorners.swift */; };
 		AE3532D01F3BCCB600CDA701 /* Quotes.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AE3532CF1F3BCCB600CDA701 /* Quotes.storyboard */; };
 		AE3532D21F3BD06400CDA701 /* QuotesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE3532D11F3BD06400CDA701 /* QuotesViewController.swift */; };
+		AE3532D81F407B2200CDA701 /* Friends.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AE3532D71F407B2200CDA701 /* Friends.storyboard */; };
+		AE3532DA1F407B3B00CDA701 /* FriendsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE3532D91F407B3B00CDA701 /* FriendsViewController.swift */; };
+		AE3532DC1F407BD400CDA701 /* FriendCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE3532DB1F407BD400CDA701 /* FriendCell.swift */; };
 		AEE697F71F38CF8F00B43FC0 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEE697F61F38CF8F00B43FC0 /* AppDelegate.swift */; };
 		AEE697F91F38CF8F00B43FC0 /* CreateQuote.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEE697F81F38CF8F00B43FC0 /* CreateQuote.swift */; };
 		AEE697FC1F38CF8F00B43FC0 /* CreateQuote.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AEE697FA1F38CF8F00B43FC0 /* CreateQuote.storyboard */; };
@@ -65,6 +68,9 @@
 		AE3532CD1F3BA86B00CDA701 /* UIView+RoundedCorners.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIView+RoundedCorners.swift"; sourceTree = "<group>"; };
 		AE3532CF1F3BCCB600CDA701 /* Quotes.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Quotes.storyboard; sourceTree = "<group>"; };
 		AE3532D11F3BD06400CDA701 /* QuotesViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QuotesViewController.swift; sourceTree = "<group>"; };
+		AE3532D71F407B2200CDA701 /* Friends.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Friends.storyboard; sourceTree = "<group>"; };
+		AE3532D91F407B3B00CDA701 /* FriendsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FriendsViewController.swift; sourceTree = "<group>"; };
+		AE3532DB1F407BD400CDA701 /* FriendCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FriendCell.swift; sourceTree = "<group>"; };
 		AEE697F31F38CF8F00B43FC0 /* Stupid Quotes.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Stupid Quotes.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		AEE697F61F38CF8F00B43FC0 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		AEE697F81F38CF8F00B43FC0 /* CreateQuote.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateQuote.swift; sourceTree = "<group>"; };
@@ -153,6 +159,7 @@
 				AE3532B01F38EC7600CDA701 /* Login.storyboard */,
 				AE3532BE1F391B9B00CDA701 /* CreateAccount.storyboard */,
 				AE3532CF1F3BCCB600CDA701 /* Quotes.storyboard */,
+				AE3532D71F407B2200CDA701 /* Friends.storyboard */,
 			);
 			name = Storyboards;
 			sourceTree = "<group>";
@@ -179,6 +186,7 @@
 			children = (
 				AE3532A91F38E97400CDA701 /* QuoteCell.swift */,
 				AE3532C91F3B794200CDA701 /* GroupCell.swift */,
+				AE3532DB1F407BD400CDA701 /* FriendCell.swift */,
 			);
 			name = Views;
 			sourceTree = "<group>";
@@ -191,6 +199,7 @@
 				AE3532B61F38FCFD00CDA701 /* LoginViewController.swift */,
 				AE3532C01F39242200CDA701 /* CreateAccountViewController.swift */,
 				AE3532D11F3BD06400CDA701 /* QuotesViewController.swift */,
+				AE3532D91F407B3B00CDA701 /* FriendsViewController.swift */,
 			);
 			name = "View Controllers";
 			sourceTree = "<group>";
@@ -296,6 +305,7 @@
 				AE3532B11F38EC7600CDA701 /* Login.storyboard in Resources */,
 				AEE698121F38D28700B43FC0 /* GoogleService-Info.plist in Resources */,
 				AEE697FE1F38CF8F00B43FC0 /* Assets.xcassets in Resources */,
+				AE3532D81F407B2200CDA701 /* Friends.storyboard in Resources */,
 				AE3532BF1F391B9B00CDA701 /* CreateAccount.storyboard in Resources */,
 				AEE697FC1F38CF8F00B43FC0 /* CreateQuote.storyboard in Resources */,
 			);
@@ -371,9 +381,11 @@
 				AE3532A21F38DC1C00CDA701 /* QuoteService.swift in Sources */,
 				AE3532CC1F3B800D00CDA701 /* GroupService.swift in Sources */,
 				AE3532C11F39242200CDA701 /* CreateAccountViewController.swift in Sources */,
+				AE3532DA1F407B3B00CDA701 /* FriendsViewController.swift in Sources */,
 				AE3532C71F3A578500CDA701 /* UITableView+Cell.swift in Sources */,
 				AEE697F71F38CF8F00B43FC0 /* AppDelegate.swift in Sources */,
 				AE3532C31F3A499600CDA701 /* Storyboard+Utility.swift in Sources */,
+				AE3532DC1F407BD400CDA701 /* FriendCell.swift in Sources */,
 				AEE698141F38D46F00B43FC0 /* User.swift in Sources */,
 				AE3532AC1F38EA5300CDA701 /* GroupsViewController.swift in Sources */,
 				AE3532B31F38FB7600CDA701 /* Style.swift in Sources */,
